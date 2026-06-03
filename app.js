@@ -44,6 +44,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:8000",
+  "https://er-salon.vercel.app",
 ];
 if (process.env.FRONTEND_URL) {
   // Support both trailing slash and non-trailing slash origins
