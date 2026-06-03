@@ -22,6 +22,6 @@ jobs:
             echo "::error::RAILWAY_TOKEN secret is empty! Please check your GitHub repository secrets."
             exit 1
           fi
-          railway up --detach --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment production
+          railway up --detach --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment production --service ${{ secrets.RAILWAY_SERVICE_NAME || 'er-backend' }}
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
