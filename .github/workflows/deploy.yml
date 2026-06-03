@@ -18,10 +18,10 @@ jobs:
 
       - name: Deploy to Railway Workspace
         run: |
-          if [ -z "$RAILWAY_TOKEN" ]; then
-            echo "::error::RAILWAY_TOKEN is empty! Please check your GitHub repository secrets."
+          if [ -z "$RAILWAY_API_TOKEN" ]; then
+            echo "::error::RAILWAY_TOKEN secret is empty! Please check your GitHub repository secrets."
             exit 1
           fi
-          railway up --detach
+          railway up --detach --project ${{ secrets.RAILWAY_PROJECT_ID }} --environment production
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
