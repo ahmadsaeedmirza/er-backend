@@ -190,7 +190,7 @@ app.use("/api/v1/orders", orderRouter);
 app.use("/api/v1/appointments", appointmentRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/admin", userRouter);
-app.use("/api/cart", cartRouter);
+app.use("/api/basket", cartRouter);
 
 app.all("/*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this site`, 404));
